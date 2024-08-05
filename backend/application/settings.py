@@ -47,18 +47,19 @@ ALLOWED_HOSTS = locals().get("ALLOWED_HOSTS", ["*"])
 COLUMN_EXCLUDE_APPS = ['channels', 'captcha'] + locals().get("COLUMN_EXCLUDE_APPS", [])
 
 INSTALLED_APPS = [
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "django_comment_migrate",
-    "rest_framework",
-    "django_filters",
-    "corsheaders",  # 注册跨域app
-    "drf_yasg",
-    "captcha",
-    "channels",
+    # contrib包见:https://docs.djangoproject.com/zh-hans/4.2/ref/contrib/
+    "django.contrib.auth", # 是 Django 框架中负责认证和授权的核心组件。它提供了一套完整的用户认证系统，包括用户模型的定义、用户登录、注销、密码管理等功能。
+    "django.contrib.contenttypes",# 对所有基于Django驱动的model提供了更高层次的抽象接口，主要用来创建模型间的通用关系。
+    "django.contrib.sessions",# Django会话管理框架
+    "django.contrib.messages",# 提供了一套完整的消息框架，允许开发者在处理完一个表单或用户输入后，向用户显示一次性的通知消息（也称为“即时消息”）。这些消息可以在一个请求中临时存储，并在随后的请求（通常是下一个请求）中检索并显示给用户。
+    "django.contrib.staticfiles",# 主要负责收集和提供静态文件（如 CSS、JavaScript、图片等）的服务
+    "django_comment_migrate",# 用于将模型注释自动迁移到数据库表注释中。它可以帮助您保持数据库表注释与模型定义的一致性，并提高代码的可读性。
+    "rest_framework", #通过使用 Django REST framework，开发者可以轻松地创建符合 RESTful 设计原则的 Web 服务，这些服务可以以 JSON 或 XML 格式返回数据，并支持各种 HTTP 方法（如 GET、POST、PUT、DELETE 等）。
+    "django_filters", # 主要用于在视图中对查询集进行过滤
+    "corsheaders",  # 注册跨域app,允许 Web 应用在不同的源（域名、协议、端口）之间进行安全的资源共享。
+    "drf_yasg", # 主要用于自动生成 API 文档和进行在线调试。
+    "captcha", # 验证码
+    "channels", # 引入了一个事件驱动的架构，其中服务器可以保持与客户端的连接开放，并在有新数据时主动向客户端发送消息
     "dvadmin.system",
 ]
 

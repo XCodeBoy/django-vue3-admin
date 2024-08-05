@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+在Django项目中，celery.py文件用于配置Celery，这是一个异步任务队列/作业队列，
+基于分布式消息传递进行工作。Celery允许你异步执行后台和定时任务，这对于执行耗时的操作（如发送电子邮件、图像处理等）非常有用，
+可以提高Web应用的性能和响应速度。
+"""
+
 import functools
 import os
 
